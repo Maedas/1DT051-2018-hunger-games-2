@@ -19,8 +19,9 @@ def step_background(w, colors, delay):
 
     Return value :: None
     '''
-
-    time.sleep(delay)
+    for foo in colors:
+        w.setBackground(foo)
+        time.sleep(delay)
 
 def dusk(w):
     '''
@@ -93,6 +94,8 @@ def test_step_background():
     print("Step fast.")
     step_background(w, colors, 0.2)
 
+    pause(w, "afdss")
+    
     print("Close the window.")
     w.close()
 
@@ -120,14 +123,15 @@ def test_all():
 
     pause(w, "brighten the background using dawn().")
     dawn(w)
-
+    
     pause(w, "close the window.")
     w.close()
 
 def main():
-    # test_step_background()
+    test_step_background()
     # test_from_dusk_to_dawn()
-    test_all()
+    # test_all()
 
 if __name__ == "__main__":
     main()
+    
